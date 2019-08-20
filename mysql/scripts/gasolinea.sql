@@ -14,7 +14,7 @@ CREATE TABLE exchangeRate (
 );
 
 CREATE TABLE municipio (
-   municipioId TINYINT UNSIGNED NOT NULL,
+   municipioId TINYINT UNSIGNED AUTO_INCREMENT NOT NULL,
    name VARCHAR(32) NOT NULL,
    shape POLYGON,
    PRIMARY KEY(municipioId)

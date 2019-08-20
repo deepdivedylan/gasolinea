@@ -3,3 +3,5 @@
 /node_modules
 /vendor
 /mysql/db
+/.gitsecret/keys/random_seed
+/.gitsecret/secrets/gasolinea.env

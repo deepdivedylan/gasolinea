@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS mexGasStation;
 DROP TABLE IF EXISTS usaGasPrice;
 DROP TABLE IF EXISTS gasType;
 DROP TABLE IF EXISTS municipio;
+DROP TABLE IF EXISTS exchangeRate;
 
 CREATE TABLE exchangeRate (
    exchangeDate DATETIME NOT NULL,

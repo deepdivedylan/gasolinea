@@ -35,7 +35,7 @@ CREATE TABLE usaGasPrice (
 CREATE TABLE mexGasStation (
    placeId MEDIUMINT UNSIGNED NOT NULL,
    municipioId TINYINT UNSIGNED NOT NULL,
-   name VARCHAR(64),
+   name VARCHAR(128),
    location POINT NOT NULL,
    INDEX(municipioId),
    FOREIGN KEY(municipioId) REFERENCES municipio(municipioId),

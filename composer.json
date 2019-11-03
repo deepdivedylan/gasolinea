@@ -1,6 +1,8 @@
 {
 	"require": {
 		"guzzlehttp/guzzle": "@stable",
-		"phayes/geophp": "@stable"
+		"phayes/geophp": "@stable",
+		"ext-dom": "*",
+		"ext-simplexml": "*"
 	}
 }

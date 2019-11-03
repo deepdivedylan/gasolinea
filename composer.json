@@ -3,6 +3,7 @@
 		"guzzlehttp/guzzle": "@stable",
 		"phayes/geophp": "@stable",
 		"ext-dom": "*",
-		"ext-simplexml": "*"
+		"ext-simplexml": "*",
+		"ext-pdo": "*"
 	}
 }

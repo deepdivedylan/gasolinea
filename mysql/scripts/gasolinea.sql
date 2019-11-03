@@ -27,9 +27,12 @@ CREATE TABLE gasType (
 );
 
 CREATE TABLE usaGasPrice (
+   gasTypeId TINYINT UNSIGNED NOT NULL,
    priceDate DATE,
    price DECIMAL(5,3),
-   INDEX(priceDate)
+   INDEX(gasTypeId),
+   INDEX(priceDate),
+   FOREIGN KEY(gasTypeId) REFERENCES gasType(gasTypeId)
 );
 
 CREATE TABLE mexGasStation (

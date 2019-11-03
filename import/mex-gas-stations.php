@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__DIR__) . "/vendor/autoload.php");
 
-function importMexGasStations(PDO $pdo) : void {
+function importMexGasStations(PDO $pdo, bool $clearTables = false) : void {
 	try {
 		$placesUrl = "https://publicacionexterna.azurewebsites.net/publicaciones/places";
 		$pricesUrl = "https://publicacionexterna.azurewebsites.net/publicaciones/prices";
@@ -22,10 +22,12 @@ function importMexGasStations(PDO $pdo) : void {
 		$placesXml = new SimpleXMLElement($placesData);
 		$pricesXml = new SimpleXMLElement($pricesData);
 
-		$pdo->query("SET FOREIGN_KEY_CHECKS = 0;");
-		$pdo->query("TRUNCATE mexGasPrice");
-		$pdo->query("TRUNCATE mexGasStation");
-		$pdo->query("SET FOREIGN_KEY_CHECKS = 1;");
+		if ($clearTables) {
+			$pdo->query("SET FOREIGN_KEY_CHECKS = 0;");
+			$pdo->query("TRUNCATE mexGasPrice");
+			$pdo->query("TRUNCATE mexGasStation");
+			$pdo->query("SET FOREIGN_KEY_CHECKS = 1;");
+		}
 
 		$gasTypes = [];
 		$query = "SELECT gasTypeId, name FROM gasType";

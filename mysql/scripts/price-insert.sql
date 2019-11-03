@@ -7,7 +7,7 @@ CREATE PROCEDURE addPrice(IN gasTypeId TINYINT UNSIGNED, IN gasPlaceId MEDIUMINT
 
 		SELECT COUNT(placeId) INTO gasStationExists FROM mexGasStation WHERE placeId = gasPlaceId;
 		IF gasStationExists = 1 THEN
-			INSERT INTO mexGasPrice(gasTypeId, placeId, price) VALUES(gasTypeId, gasPlaceId, gasPrice);
+			INSERT INTO mexGasPrice(gasTypeId, placeId, priceDate, price) VALUES(gasTypeId, gasPlaceId, NOW(), gasPrice);
 		END IF;
 
 	END $$

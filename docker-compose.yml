@@ -8,3 +8,7 @@ services:
      volumes:
         - ./mysql/db:/var/lib/mysql
         - ./mysql/scripts:/docker-entrypoint-initdb.d
+  site:
+     build: './site'
+     env_file:
+        - ./.gitsecret/secrets/gasolinea.env

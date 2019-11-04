@@ -1,7 +1,7 @@
 .DS_Store
 /.idea
-/node_modules
-/vendor
+/site/node_modules
+/site/vendor
 /mysql/db
 /.gitsecret/keys/random_seed
 /.gitsecret/secrets/gasolinea.env

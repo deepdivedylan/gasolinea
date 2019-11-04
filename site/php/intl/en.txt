@@ -1,0 +1,3 @@
+en {
+	title { "Gasol&iacute;nea" }
+}

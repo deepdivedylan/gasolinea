@@ -43,7 +43,7 @@ function downloadAaaGasPrice(\PDO $pdo) {
 		return $previous && is_numeric($price) === true && $price > 0.0;
 	}, true);
 	if ($hasValidPrices) {
-		$today = date("Y-m-d");
+		$today = gmdate("Y-m-d");
 		$sql = "INSERT INTO usaGasPrice(priceDate, price, gasTypeId) VALUES(:priceDate, :price, :gasTypeId)";
 		$statement = $pdo->prepare($sql);
 		array_walk($prices, function ($price, $gasTypeId) use ($statement, $today) {

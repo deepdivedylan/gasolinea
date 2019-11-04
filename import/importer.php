@@ -1,6 +1,6 @@
 <?php
-
 require("./aaa-gas-price.php");
+require("./exchange-rate.php");
 require("./mex-gas-stations.php");
 
 try {
@@ -10,6 +10,7 @@ try {
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	downloadAaaGasPrice($pdo);
 	importMexGasStations($pdo);
+	getLatestExchangeRate($pdo);
 } catch (Exception $exception) {
 	echo "Exception: " . $exception->getMessage() . PHP_EOL;
 }

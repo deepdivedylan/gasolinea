@@ -12,7 +12,7 @@ module.exports = {
 
 	mode: 'production',
 	output: {
-		path: helpers.root('public_html/dist'),
+		path: helpers.root('site/public/dist'),
 		publicPath: 'dist',
 		filename: '[name].[hash].js',
 		chunkFilename: '[id].[hash].chunk.js'
@@ -44,7 +44,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			inject: 'head',
-			filename: helpers.root('public_html') + '/index.php',
+			filename: helpers.root('site') + '/public/index.php',
 			template: helpers.root('webpack') + '/index.php'
 		}),
 		new webpack.ProvidePlugin({

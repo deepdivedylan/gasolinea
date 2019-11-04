@@ -17,9 +17,13 @@ $translator = new Translator($locale);
 <!DOCTYPE html>
 <html lang="<?php echo $locale; ?>">
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title><?php echo $translator->getTranslatedString("title"); ?></title>
 	</head>
 	<body>
-		<h1><?php echo $translator->getTranslatedString("title"); ?></h1>
+		<main class="container">
+			<h1><?php echo $translator->getTranslatedString("title"); ?></h1>
+		</main>
 	</body>
 </html>

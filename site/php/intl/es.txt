@@ -1,3 +1,12 @@
 es {
 	title { "Gasol&iacute;nea" }
+	loading { "Cargando datos" }
+	currency { "Moneda" }
+	dollars { "Dolares" }
+	pesos { "Pesos" }
+	lastUpdated { "&Uacute;ltima actualizaci&oacute;n:" }
+	exchangeRate { "Tipo de Cambio:" }
+	municipio { "Municipio" }
+	price { "Precio" }
+	gasType { "Tipo" }
 }

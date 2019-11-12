@@ -52,7 +52,7 @@ export const convertCurrency = () => {
 };
 
 export const sortByField = (field) => {
-	const prices = gasData.data.prices.sort((a, b) => (a[field] > b[field]) - (a[field] < b[field]));
+	const prices = displayData.data.prices.sort((a, b) => (a[field] > b[field]) - (a[field] < b[field]));
 	displayData.data.prices = prices;
 	populatePage();
 };

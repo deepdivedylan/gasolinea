@@ -1,1 +1,9 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+#loading {
+	display: block;
+}
+
+#gasData {
+	display: none;
+}

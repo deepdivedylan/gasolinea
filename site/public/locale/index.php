@@ -24,8 +24,8 @@ try {
 		$requestObject = json_decode($requestContent);
 		$newLocale = $requestObject->locale;
 		if(in_array($newLocale, Translator::ACCEPTED_LOCALES) === true) {
-			$_SESSION["locale"] = $locale;
-			setcookie("locale", $locale, time() + 2592000); // 30 day cookie
+			$_SESSION["locale"] = $newLocale;
+			setcookie("locale", $newLocale, time() + 2592000); // 30 day cookie
 			$reply->message = "Locale updated OK";
 		} else {
 			throw(new InvalidArgumentException("locale not supported", 405));

@@ -1,5 +1,5 @@
 <?php
-require(dirname(__DIR__) . "/vendor/autoload.php");
+require(dirname(__DIR__, 2) . "/vendor/autoload.php");
 
 function getLatestExchangeRate(\PDO $pdo) {
 	$url = "http://data.fixer.io/api/latest?access_key=" . $_ENV["FIXER_API_KEY"] . "&symbols=MXN,USD";

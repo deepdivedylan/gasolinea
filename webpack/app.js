@@ -57,10 +57,14 @@ export const sortByField = (field) => {
 	populatePage();
 };
 
+export const dismissLocale = () => {
+	document.getElementById('localeLink').classList.add('d-none');
+};
+
 export const switchLocale = () => {
 	const locale = Cookies.get('locale') || DEFAULT_LOCALE;
 	const newLocale = ACCEPTED_LOCALES.find(currLocale => currLocale !== locale);
-	fetch('/api/locale/', {
+	fetch('/locale/', {
 		method: 'POST',
 		body: JSON.stringify({locale: newLocale}),
 		headers: new Headers({
@@ -84,8 +88,9 @@ export const fetchGasPrices = () => {
 			if (reply.status === 200) {
 				gasData = reply;
 				displayData = cloneDeep(gasData);
-				document.getElementById('gasData').style.display = 'block';
-				document.getElementById('loading').style.display = 'none';
+				document.getElementById('gasData').classList.remove('d-none');
+				document.getElementById('loading').classList.remove('d-block');
+				document.getElementById('loading').classList.add('d-none');
 				populatePage();
 			}
 		});
@@ -100,6 +105,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	for (let tableHeader of tableHeaders) {
 		tableHeader.addEventListener('click', () => sortByField(tableHeader.dataset.fieldName));
 	}
-	// document.getElementById('localeLink').addEventListener('click', switchLocale);
+	document.getElementById('localeLink').addEventListener('click', switchLocale);
+	document.getElementById('localeDismiss').addEventListener('click', dismissLocale);
 	fetchGasPrices();
 });

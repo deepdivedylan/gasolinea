@@ -25,10 +25,18 @@ $translator = new Translator($locale);
 		<main class="container">
 			<h1><i class="fas fa-gas-pump"></i> <?php echo $translator->getTranslatedString("title"); ?></h1>
 			<main class="container">
-				<div id="loading" class="alert alert-primary">
-					<i class="fas fa-spin fa-spinner"></i> <?php echo $translator->getTranslatedString("loading"); ?>&hellip;
+				<div id="loading" class="alert alert-primary d-block">
+					<i class="fas fa-pulse fa-spinner"></i> <?php echo $translator->getTranslatedString("loading"); ?>&hellip;
 				</div>
-				<div id="gasData">
+				<div class="alert alert-secondary">
+					<span id="localeLink">
+						<img class="flag-icon" src="<?php echo $translator->getTranslatedString("imgFlag"); ?>" alt="" /> <?php echo $translator->getTranslatedString("changeLocale"); ?>
+					</span>
+					<button id="localeDismiss" type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div id="gasData" class="d-none">
 					<div class="row">
 						<div class="col-md-6">
 							<form name="currencyForm">

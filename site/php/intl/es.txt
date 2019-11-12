@@ -1,5 +1,7 @@
 es {
 	title { "Gasol&iacute;nea" }
+	imgFlag { "/images/flag-us.svg" }
+	changeLocale { "Change to English" }
 	loading { "Cargando datos" }
 	currency { "Moneda" }
 	dollars { "Dolares" }

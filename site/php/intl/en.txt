@@ -1,5 +1,7 @@
 en {
 	title { "Gasol&iacute;nea" }
+	imgFlag { "/images/flag-mx.svg" }
+	changeLocale { "Cambiar al espa&ntilde;ol" }
 	loading { "Loading gasoline data" }
 	currency { "Currency" }
 	dollars { "Dollars" }

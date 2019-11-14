@@ -52,7 +52,14 @@ export const convertCurrency = () => {
 };
 
 export const sortByField = (field) => {
-	const prices = displayData.data.prices.sort((a, b) => (a[field] > b[field]) - (a[field] < b[field]));
+	let prices = displayData.data.prices.sort((a, b) => (a[field] > b[field]) - (a[field] < b[field]));
+	if (gasData.filters.lastField === field) {
+		gasData.filters.reverse[field] = !gasData.filters.reverse[field];
+		if (gasData.filters.reverse[field]) {
+			prices = prices.reverse();
+		}
+	}
+	gasData.filters.lastField = field;
 	displayData.data.prices = prices;
 	populatePage();
 };
@@ -87,6 +94,11 @@ export const fetchGasPrices = () => {
 		.then(reply => {
 			if (reply.status === 200) {
 				gasData = reply;
+				gasData.filters = {};
+				gasData.filters.gasTypes = [...new Set(gasData.data.prices.map(price => price.gasType))];
+				gasData.filters.muncipios = [...new Set(gasData.data.prices.map(price => price.municipio))];
+				gasData.filters.reverse = {gasType: false, municipio: false, price: false};
+				gasData.filters.lastField = undefined;
 				displayData = cloneDeep(gasData);
 				document.getElementById('gasData').classList.remove('d-none');
 				document.getElementById('loading').classList.remove('d-block');

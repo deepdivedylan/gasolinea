@@ -60,9 +60,9 @@ $translator = new Translator($locale);
 						<table class="table table-fluid table-striped">
 							<thead>
 								<tr>
-									<th data-field-name="municipio"><i class="fas fa-sort-amount-down-alt"></i> <?php echo $translator->getTranslatedString("municipio"); ?></th>
-									<th data-field-name="price"><i class="fas fa-sort-amount-down-alt"></i> <?php echo $translator->getTranslatedString("price"); ?></th>
-									<th data-field-name="gasType"><i class="fas fa-sort-amount-down-alt"></i> <?php echo $translator->getTranslatedString("gasType"); ?></th>
+									<th data-field-name="municipio"><i class="fas fa-sort"></i> <?php echo $translator->getTranslatedString("municipio"); ?></th>
+									<th data-field-name="price"><i class="fas fa-sort"></i> <?php echo $translator->getTranslatedString("price"); ?></th>
+									<th data-field-name="gasType"><i class="fas fa-sort"></i> <?php echo $translator->getTranslatedString("gasType"); ?></th>
 								</tr>
 							</thead>
 							<tbody id="tableData"></tbody>

@@ -31,6 +31,7 @@ export const populatePage = () => {
 	document.getElementById('timestamp').innerHTML = timestamp;
 	document.getElementById('exchangeRate').innerHTML = exchangeRate;
 
+	displayData.data.prices = displayData.data.prices.filter(price => gasData.filters.municipios.includes(price.municipio) && gasData.filters.gasTypes.includes(price.gasType));
 	const rows = displayData.data.prices.map(row => `<tr><td>${row.municipio}</td><td>${round(row.price, 3).toFixed(3)}</td><td>${row.gasType}</td></tr>`);
 	document.getElementById('tableData').innerHTML = rows.join('\n');
 };
@@ -49,6 +50,18 @@ export const convertCurrency = () => {
 		displayData.data.prices = prices;
 		populatePage();
 	}
+};
+
+export const filterByGasType = () => {
+	gasData.filters.gasTypes = [...document.forms.gasTypeForm.elements].map(input => input.checked ? input.value : undefined).filter(value => value !== undefined);
+	displayData.data.prices = cloneDeep(gasData.data.prices);
+	populatePage();
+};
+
+export const filterByMunicipio = () => {
+	gasData.filters.municipios = [...document.forms.municipioForm.elements].map(input => input.checked ? input.value : undefined).filter(value => value !== undefined);
+	displayData.data.prices = cloneDeep(gasData.data.prices);
+	populatePage();
 };
 
 export const sortByField = (field) => {
@@ -96,7 +109,7 @@ export const fetchGasPrices = () => {
 				gasData = reply;
 				gasData.filters = {};
 				gasData.filters.gasTypes = [...new Set(gasData.data.prices.map(price => price.gasType))];
-				gasData.filters.muncipios = [...new Set(gasData.data.prices.map(price => price.municipio))];
+				gasData.filters.municipios = [...new Set(gasData.data.prices.map(price => price.municipio))];
 				gasData.filters.reverse = {gasType: false, municipio: false, price: false};
 				gasData.filters.lastField = undefined;
 				displayData = cloneDeep(gasData);
@@ -109,14 +122,14 @@ export const fetchGasPrices = () => {
 };
 
 window.addEventListener('DOMContentLoaded', () => {
-	const currencyRadios = document.getElementsByTagName('input');
-	for (let currencyRadio of currencyRadios) {
-		currencyRadio.addEventListener('change', convertCurrency);
-	}
 	const tableHeaders = document.getElementsByTagName("th");
 	for (let tableHeader of tableHeaders) {
 		tableHeader.addEventListener('click', () => sortByField(tableHeader.dataset.fieldName));
 	}
+
+	[...document.forms.currencyForm.elements].forEach(currencyRadio => currencyRadio.addEventListener('change', convertCurrency));
+	[...document.forms.gasTypeForm.elements].forEach(gasTypeCheckbox => gasTypeCheckbox.addEventListener('change', filterByGasType));
+	[...document.forms.municipioForm.elements].forEach(municipioCheckbox => municipioCheckbox.addEventListener('change', filterByMunicipio));
 	document.getElementById('localeLink').addEventListener('click', switchLocale);
 	document.getElementById('localeDismiss').addEventListener('click', dismissLocale);
 	fetchGasPrices();

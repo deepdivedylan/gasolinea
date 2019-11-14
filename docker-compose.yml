@@ -10,5 +10,7 @@ services:
         - ./mysql/scripts:/docker-entrypoint-initdb.d
   site:
      build: './site'
+     environment:
+        - VIRTUAL_HOST=www.gasolinea.com.mx,gasolinea.com.mx
      env_file:
         - ./.gitsecret/secrets/gasolinea.env

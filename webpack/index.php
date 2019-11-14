@@ -70,8 +70,8 @@ $translator = new Translator($locale);
 									<label for="mexicali">Mexicali</label>
 								</div>
 								<div class="form-check form-check-inline">
-									<input id="rosarito" class="form-check-input" type="checkbox" name="municipio" value="Playas de Rosarito" checked>
-									<label for="rosarito">Playas de Rosarito</label>
+									<input id="rosarito" class="form-check-input" type="checkbox" name="municipio" value="Playas De Rosarito" checked>
+									<label for="rosarito">Playas De Rosarito</label>
 								</div>
 								<div class="form-check form-check-inline">
 									<input id="sanDiego" class="form-check-input" type="checkbox" name="municipio" value="San Diego" checked>

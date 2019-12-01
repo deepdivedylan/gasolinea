@@ -14,4 +14,6 @@ es {
 	info { "Estatus" }
 	language { "Idioma" }
 	settings { "Ajustes" }
+	aboutTitle { "&iquest;Qu&eacute; es este Sito?" }
+	aboutText { "Este sitio evita el t&aacute;n mar&iacute;n de cual ciudad fronteriza es el m&aacute;s econ&oacute;mico para cargar gasolina. Conversiones m&eacute;tricas y el tipo de cambio ser&aacute;n calculados autom&aacute;ticamente. Haz clic en <em>Ajustes</em> para personalizar la presentaci&oacute;n." }
 }

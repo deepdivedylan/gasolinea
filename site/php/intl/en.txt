@@ -14,4 +14,6 @@ en {
 	info { "Status" }
 	language { "Language" }
 	settings { "Settings" }
+	aboutTitle { "About" }
+	aboutText { "This site takes the guessing out of which city is more affordable to get gas. It will automatically calculate metric conversions and use updated exchange rates for currency conversions. Click <em>Settings</em> to customize what you see." }
 }

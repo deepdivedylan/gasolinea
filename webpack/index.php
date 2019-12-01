@@ -28,6 +28,8 @@ $translator = new Translator($locale);
 					<i class="fas fa-pulse fa-spinner"></i> <?php echo $translator->getTranslatedString("loading"); ?>&hellip;
 				</div>
 				<div id="gasData" class="d-none">
+					<h3><?php echo $translator->getTranslatedString("aboutTitle"); ?></h3>
+					<p><?php echo $translator->getTranslatedString("aboutText"); ?></p>
 					<h3><button class="btn btn-lg" type="button" data-toggle="collapse" data-target=".settings"><i class="fas fa-cog"></i> <?php echo $translator->getTranslatedString("settings"); ?></button></h3>
 					<div class="card collapse settings">
 						<div class="card-body">

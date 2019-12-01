@@ -77,10 +77,6 @@ export const sortByField = (field) => {
 	populatePage();
 };
 
-export const dismissLocale = () => {
-	document.getElementById('localeLink').classList.add('d-none');
-};
-
 export const switchLocale = () => {
 	const locale = Cookies.get('locale') || DEFAULT_LOCALE;
 	const newLocale = ACCEPTED_LOCALES.find(currLocale => currLocale !== locale);
@@ -131,6 +127,5 @@ window.addEventListener('DOMContentLoaded', () => {
 	[...document.forms.gasTypeForm.elements].forEach(gasTypeCheckbox => gasTypeCheckbox.addEventListener('change', filterByGasType));
 	[...document.forms.municipioForm.elements].forEach(municipioCheckbox => municipioCheckbox.addEventListener('change', filterByMunicipio));
 	document.getElementById('localeLink').addEventListener('click', switchLocale);
-	// document.getElementById('localeDismiss').addEventListener('click', dismissLocale);
 	fetchGasPrices();
 });

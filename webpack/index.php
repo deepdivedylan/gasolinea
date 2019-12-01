@@ -21,8 +21,8 @@ $translator = new Translator($locale);
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title><?php echo $translator->getTranslatedString("title"); ?></title>
 	</head>
-	<body>
-		<main class="container">
+	<body class="sfooter">
+		<main class="container sfooter-content">
 			<h1><i class="fas fa-gas-pump"></i> <?php echo $translator->getTranslatedString("title"); ?></h1>
 				<div id="loading" class="alert alert-primary d-block">
 					<i class="fas fa-pulse fa-spinner"></i> <?php echo $translator->getTranslatedString("loading"); ?>&hellip;
@@ -135,5 +135,14 @@ $translator = new Translator($locale);
 					</table>
 				</div>
 		</main>
+	<footer class="bg-light border-secondary border-top">
+		<div class="container">
+			&copy; 2019 Dylan McDonald. Released under the terms of the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>.
+			<span class="float-right">
+				<a class="text-dark" href="https://github.com/deepdivedylan/gasolinea"><i class="fab fa-github"></i></a>
+				<a class="text-danger" href="https://reddit.com/u/deepdivedylan"><i class="fab fa-reddit"></i></a>
+			</span>
+		</div>
+	</footer>
 	</body>
 </html>

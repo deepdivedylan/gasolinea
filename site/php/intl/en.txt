@@ -4,12 +4,14 @@ en {
 	changeLocale { "Cambiar al espa&ntilde;ol" }
 	loading { "Loading gasoline data" }
 	currency { "Currency" }
-	dollars { "Dollars" }
-	pesos { "Pesos" }
+	dollars { "Dollars per Gallon" }
+	pesos { "Pesos per Liter" }
 	lastUpdated { "Last Updated:" }
 	exchangeRate { "Exchange Rate:" }
 	municipio { "City" }
 	price { "Price" }
 	gasType { "Gas Type" }
+	info { "Status" }
+	language { "Language" }
 	settings { "Settings" }
 }

@@ -4,12 +4,14 @@ es {
 	changeLocale { "Change to English" }
 	loading { "Cargando datos" }
 	currency { "Moneda" }
-	dollars { "Dolares" }
-	pesos { "Pesos" }
+	dollars { "Dolares por Gal&oacute;n" }
+	pesos { "Pesos por Litro" }
 	lastUpdated { "&Uacute;ltima actualizaci&oacute;n:" }
 	exchangeRate { "Tipo de Cambio:" }
 	municipio { "Municipio" }
 	price { "Precio" }
 	gasType { "Tipo" }
+	info { "Estatus" }
+	language { "Idioma" }
 	settings { "Ajustes" }
 }

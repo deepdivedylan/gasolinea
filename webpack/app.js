@@ -131,6 +131,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	[...document.forms.gasTypeForm.elements].forEach(gasTypeCheckbox => gasTypeCheckbox.addEventListener('change', filterByGasType));
 	[...document.forms.municipioForm.elements].forEach(municipioCheckbox => municipioCheckbox.addEventListener('change', filterByMunicipio));
 	document.getElementById('localeLink').addEventListener('click', switchLocale);
-	document.getElementById('localeDismiss').addEventListener('click', dismissLocale);
+	// document.getElementById('localeDismiss').addEventListener('click', dismissLocale);
 	fetchGasPrices();
 });

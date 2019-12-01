@@ -36,7 +36,8 @@ $translator = new Translator($locale);
 					</button>
 				</div>
 				<div id="gasData" class="d-none">
-					<div class="row">
+					<h3><button class="btn btn-lg" type="button" data-toggle="collapse" data-target=".settings"><i class="fas fa-cog"></i> <?php echo $translator->getTranslatedString("settings"); ?></button></h3>
+					<div class="collapse row settings">
 						<div class="col-md-6">
 							<form name="currencyForm">
 								<label for="currency"><i class="fas fa-money-bill-wave"></i> <?php echo $translator->getTranslatedString("currency"); ?></label><br />
@@ -57,7 +58,7 @@ $translator = new Translator($locale);
 							</p>
 						</div>
 					</div>
-					<div class="row">
+					<div class="collapse row settings">
 						<div class="col-md-6">
 							<form name="municipioForm">
 								<label for="municipio"><i class="fas fa-city"></i> <?php echo $translator->getTranslatedString("municipio"); ?></label><br />

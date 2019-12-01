@@ -11,4 +11,5 @@ es {
 	municipio { "Municipio" }
 	price { "Precio" }
 	gasType { "Tipo" }
+	settings { "Ajustes" }
 }

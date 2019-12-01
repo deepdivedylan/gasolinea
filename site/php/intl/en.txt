@@ -11,4 +11,5 @@ en {
 	municipio { "City" }
 	price { "Price" }
 	gasType { "Gas Type" }
+	settings { "Settings" }
 }
